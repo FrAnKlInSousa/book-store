@@ -11,7 +11,9 @@
             <p class="card-text">{{ livro.autor }}</p>
             <p class="card-text fw-bold">R$ {{ livro.preco }}</p>
           </div>
-          <button class="btn btn-outline-success">Comprar</button>
+          <button class="btn btn-outline-success" (click)="adicionaLivroCesta(livro)">
+            Comprar
+          </button>
         </div>
       </div>
     </div>
