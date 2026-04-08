@@ -1,1 +1,19 @@
-<p>vitrine works!</p>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let livro of livros">
+      <div class="card h-100">
+        <div class="card-container">
+          <img [src]="livro.caminhoCapa" alt="capa do livro" class="card-img-top" />
+        </div>
+        <div class="card-body">
+          <div class="details">
+            <h5 class="card-title">{{ livro.titulo }}</h5>
+            <p class="card-text">{{ livro.autor }}</p>
+            <p class="card-text fw-bold">R$ {{ livro.preco }}</p>
+          </div>
+          <button class="btn btn-outline-success">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
