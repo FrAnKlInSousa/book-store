@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Book } from '../models/book';
 import { ItemCesta } from '../models/item-cesta';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-vitrine',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './vitrine.html',
   styleUrl: './vitrine.css',
 })
 export class Vitrine {
+  termoBusca: string = '';
+
   livros: Book[] = [
     new Book(1, 'Clean Code', 99.9, 'Robert C. Martin', 'clean-code'),
     new Book(2, 'The Pragmatic Programmer', 89.9, 'Andrew Hunt', 'the-pragmatic-programmer'),
@@ -48,5 +51,13 @@ export class Vitrine {
 
     localStorage.setItem('cesta', JSON.stringify(lista));
     location.href = 'cesta';
+  }
+
+  get livrosFiltrados(): Book[] {
+    if (!this.termoBusca) return this.livros;
+
+    return this.livros.filter((livro) =>
+      livro.titulo.toLowerCase().includes(this.termoBusca.toLowerCase()),
+    );
   }
 }
