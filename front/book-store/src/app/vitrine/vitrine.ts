@@ -47,5 +47,6 @@ export class Vitrine {
     }
 
     localStorage.setItem('cesta', JSON.stringify(lista));
+    location.href = 'cesta';
   }
 }
