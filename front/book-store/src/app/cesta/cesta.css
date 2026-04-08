@@ -1,0 +1,9 @@
+.preco {
+  padding: 0 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
+}

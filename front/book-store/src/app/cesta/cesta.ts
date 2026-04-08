@@ -30,4 +30,12 @@ export class Cesta {
       this.total += obj.valor * obj.quantidade;
     }
   }
+
+  limpaCesta() {
+    localStorage.removeItem('cesta');
+
+    this.lista = [];
+    this.total = 0;
+    this.mensagem = 'Sua cesta está vazia.';
+  }
 }

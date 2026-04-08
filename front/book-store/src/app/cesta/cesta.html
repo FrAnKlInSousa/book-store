@@ -20,6 +20,9 @@
     </tr>
   </tbody>
 </table>
-{{ total }}
+<div class="preco">R$ {{ total }}</div>
 <br />
-<button class="btn btn-success" *ngIf="lista.length > 0">Gravar pedido</button>
+<div class="actions">
+  <button class="btn btn-success" *ngIf="lista.length > 0">Gravar pedido</button>
+  <button class="btn btn-danger" (click)="limpaCesta()">Limpar carrinho</button>
+</div>
