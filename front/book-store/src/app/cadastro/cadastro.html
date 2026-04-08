@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <h1>Cadastro</h1>
+
+  <form (ngSubmit)="cadastrar()">
+    <div class="mb-3">
+      <label class="form-label">Nome</label>
+      <input type="text" class="form-control" [(ngModel)]="usuario.nome" name="nome" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" [(ngModel)]="usuario.email" name="email" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Endereço</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="usuario.endereco"
+        name="endereco"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Senha</label>
+      <input
+        type="password"
+        class="form-control"
+        [(ngModel)]="usuario.senha"
+        name="senha"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+  </form>
+</div>
