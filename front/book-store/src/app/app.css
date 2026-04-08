@@ -1,0 +1,9 @@
+img {
+  height: 30px;
+  width: 30px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+}
